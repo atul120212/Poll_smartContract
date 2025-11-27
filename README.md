@@ -31,11 +31,7 @@ It ensures fairness by preventing double voting and stores all poll data on the 
 ---
 
 ## 🔗 Deployed Smart Contract  
-**Contract Address:** `XXX`  
-(Add your deployed address here after deployment)
+**Contract Address:** `https://coston2-explorer.flare.network//tx/0xdaabce4c409dc295f317272068583b0e7a60a0ee783829448e98f0d594f8807c`  
 
----
 
-## 📦 Smart Contract Code  
-```solidity
-//paste your code
+
