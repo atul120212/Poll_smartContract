@@ -7,6 +7,9 @@
 `0x5D61543792a5d11FA80Ea7aEC8256f6ce8f3bb0a`  
 Explorer: https://coston2-explorer.flare.network/address/0x5D61543792a5d11FA80Ea7aEC8256f6ce8f3bb0a
 
+<img width="2521" height="1184" alt="image" src="https://github.com/user-attachments/assets/86cd7974-fab3-4582-8b27-c071fc3a87ff" />
+
+
 ---
 
 ## **Deployed App**
