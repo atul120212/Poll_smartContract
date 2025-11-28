@@ -29,7 +29,14 @@ const SamplePoll = () => {
           <button
             onClick={actions.voteA}
             disabled={state.isLoading || data.hasVoted}
-            className="w-full bg-primary text-primary-foreground px-4 py-2 rounded-lg"
+            className="w-full px-5 py-3 rounded-xl font-semibold 
+    bg-gradient-to-r from-blue-500 to-indigo-600 
+    text-white shadow-lg shadow-blue-300/30
+    hover:from-blue-600 hover:to-indigo-700
+    hover:shadow-xl hover:shadow-blue-400/40
+    transition-all duration-300
+    active:scale-95
+    disabled:opacity-50 disabled:cursor-not-allowed"
           >
             Vote for {optionA}
           </button>
@@ -37,7 +44,15 @@ const SamplePoll = () => {
           <button
             onClick={actions.voteB}
             disabled={state.isLoading || data.hasVoted}
-            className="w-full bg-primary text-primary-foreground px-4 py-2 rounded-lg"
+            className="w-full px-5 py-3 rounded-xl font-semibold 
+    bg-gradient-to-r from-blue-500 to-indigo-600 
+    text-white shadow-lg shadow-blue-300/30
+    hover:from-blue-600 hover:to-indigo-700
+    hover:shadow-xl hover:shadow-blue-400/40
+    transition-all duration-300
+    active:scale-95
+
+    disabled:opacity-50 disabled:cursor-not-allowed"
           >
             Vote for {optionB}
           </button>
