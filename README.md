@@ -9,6 +9,11 @@ Explorer: https://coston2-explorer.flare.network/address/0x5D61543792a5d11FA80Ea
 
 ---
 
+## **Deployed App**
+
+Explore it here: https://poll-flare-smart-contract.vercel.app/
+
+---
 ## 📌 **Project Overview**
 
 This project is a decentralized polling/voting application built on the **Flare Coston2 Testnet**.  
