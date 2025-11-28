@@ -1,49 +1,42 @@
-// // SPDX-License-Identifier: MIT
-// pragma solidity ^0.8.0;
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
 
-// contract MultiWill {
-//     struct Will {
-//         address recipient;
-//         uint256 amount;
-//         bool claimed;
-//     }
+contract SimplePoll {
 
-//     mapping(address => Will[]) public wills; // Each owner can have multiple wills
+    // Poll details (fixed, no input on deployment)
+    string public pollQuestion = "Which option do you support?";
+    string public optionA = "Option A";
+    string public optionB = "Option B";
 
-//     function createWill(address _recipient) public payable {
-//         require(_recipient != address(0), "Invalid recipient address");
-//         require(msg.value > 0, "Amount must be greater than zero");
+    // Vote counts
+    uint public votesA;
+    uint public votesB;
 
-//         wills[msg.sender].push(Will({
-//             recipient: _recipient,
-//             amount: msg.value,
-//             claimed: false
-//         }));
-//     }
+    // Track who already voted
+    mapping(address => bool) public hasVoted;
 
-//     function claimWill(address _owner, uint256 _index) public {
-//         require(_index < wills[_owner].length, "Invalid will index");
+    // Function to vote for Option A
+    function voteA() public {
+        require(!hasVoted[msg.sender], "You have already voted!");
+        hasVoted[msg.sender] = true;
+        votesA++;
+    }
 
-//         Will storage userWill = wills[_owner][_index];
-//         require(msg.sender == userWill.recipient, "Only recipient can claim");
-//         require(!userWill.claimed, "Already claimed");
-//         require(userWill.amount > 0, "No funds to claim");
+    // Function to vote for Option B
+    function voteB() public {
+        require(!hasVoted[msg.sender], "You have already voted!");
+        hasVoted[msg.sender] = true;
+        votesB++;
+    }
 
-//         userWill.claimed = true;
-//         payable(userWill.recipient).transfer(userWill.amount);
-//     }
-
-//     function getMyWillsCount() public view returns (uint256) {
-//         return wills[msg.sender].length;
-//     }
-
-//     function getWill(address _owner, uint256 _index) public view returns (address recipient, uint256 amount, bool claimed) {
-//         require(_index < wills[_owner].length, "Invalid will index");
-//         Will memory userWill = wills[_owner][_index];
-//         return (userWill.recipient, userWill.amount, userWill.claimed);
-//     }
-
-//     function getContractBalance() public view returns (uint256) {
-//         return address(this).balance;
-//     }
-// }
+    // Helper function to get full poll details
+    function getPollDetails() public view returns(
+        string memory,
+        string memory,
+        string memory,
+        uint,
+        uint
+    ) {
+        return (pollQuestion, optionA, optionB, votesA, votesB);
+    }
+}
